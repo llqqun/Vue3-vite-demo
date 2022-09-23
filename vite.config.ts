@@ -20,7 +20,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     resolve: {
       alias: [
         {
-          find: /@/,
+          find: '@',
           replacement: join(__dirname, 'src'),
         },
       ],
@@ -30,11 +30,9 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
       Components({
         dts: true,
         dirs: ['src/components'], //用于搜索组件的目录的相对路径
-        extensions: ['vue'],
         resolvers: [ElementPlusResolver()],
       }),
       AutoImport({
-        // dirs: ['./src/components'], 自定义自动导入.ts
         dts: true, // 生成.d.ts文件
         vueTemplate: false, // 生成vue模板声明
         imports: ['vue'], // 全局导入
